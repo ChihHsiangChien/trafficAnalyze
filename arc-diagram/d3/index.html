@@ -123,7 +123,7 @@ d3.json("gantry.json", function( data) {
       
   // Add the highlighting functionality
   nodes
-    .on('mouseover', function (d) {
+    .on('mousedown', function (d) {
       // Highlight the nodes: every node is green except of him
       nodes
         .style('opacity', 0.1)
@@ -144,6 +144,7 @@ d3.json("gantry.json", function( data) {
         .attr("y", function(label_d){ return label_d.ETagGantryID === d.ETagGantryID ? 0 : 0 } )
 
     })
+/*    
     .on('mouseout', function (d) {
       nodes.style('opacity', 1)
       links
@@ -156,6 +157,7 @@ d3.json("gantry.json", function( data) {
 
 
     })
+*/    
 })
 
 </script>
