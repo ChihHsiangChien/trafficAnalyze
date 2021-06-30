@@ -29,7 +29,7 @@ var svg = d3.select("#my_dataviz")
           "translate(" + margin.left + "," + margin.top + ")");
 
 // Read dummy data
-d3.json("gantry.json", function( data) {
+d3.json("data_researcherNetwork.json", function( data) {
 
   // List of node names
   var allNodes = data.nodes.map(function(d){return d.name})
@@ -110,7 +110,7 @@ d3.json("gantry.json", function( data) {
     .on('mouseover', function (d) {
       // Highlight the nodes: every node is green except of him
       nodes
-        .style('opacity', .2)
+        .style('opacity', 0.9)
       d3.select(this)
         .style('opacity', 1)
       // Highlight the connections
@@ -126,8 +126,8 @@ d3.json("gantry.json", function( data) {
     .on('mouseout', function (d) {
       nodes.style('opacity', 1)
       links
-        .style('stroke', 'grey')
-        .style('stroke-opacity', .8)
+        .style('stroke', 'gray')
+        .style('stroke-opacity', 0.8)
         .style('stroke-width', '1')
       labels
         .style("font-size", 6 )
